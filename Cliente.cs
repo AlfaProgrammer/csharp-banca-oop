@@ -15,7 +15,7 @@
 
         public Prestito CreaPrestito()
         {
-            Prestito nuovoPrestito = new(this.name);
+            Prestito nuovoPrestito = new Prestito(this.name);
 
             return nuovoPrestito;
         }

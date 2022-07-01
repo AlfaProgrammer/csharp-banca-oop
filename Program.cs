@@ -10,10 +10,14 @@ Banca banca = new Banca("Intesa San Paolo");
 /************************
  * Aggiunta nuovo cliente
  ************************/
-Cliente nuovoCliente = Banca.CreaCliente();
+Cliente clienteX = Banca.CreaCliente();
 
-banca.nuovoCliente(nuovoCliente);
+banca.nuovoCliente(clienteX);
 
 banca.stampaClienti();
 
-nuovoCliente.CreaPrestito();
+Prestito nuovoPrestitoClienteX = clienteX.CreaPrestito();
+
+banca.nuovoPrestito(nuovoPrestitoClienteX);
+
+banca.stampaPrestiti();

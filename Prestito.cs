@@ -2,8 +2,8 @@
 {
     internal class Prestito
     {
-        private int ID { get; } 
-        private string Intestatario { get; set; }
+        public int ID { get; } = 0;
+        public string Intestatario;
         public Prestito(string intestatario)
         {
             this.Intestatario = intestatario;

@@ -10,8 +10,8 @@ namespace csharpBbancaOop
     {
         private string Name { get; set; }
 
-        private List<Cliente> clienti { get; }
-        static  List<Prestito>? prestiti;
+        private List<Cliente> clienti;
+        private List<Prestito>? prestiti;
 
         public Banca(string name)
         {
@@ -39,7 +39,7 @@ namespace csharpBbancaOop
         // Gestione Prestiti
         public void nuovoPrestito(Prestito prestito)
         {
-            this.prestiti.Add(prestito);
+            prestiti.Add(prestito);
         }
         // Fine gestione prestiti
 
@@ -49,6 +49,15 @@ namespace csharpBbancaOop
             foreach (Cliente cliente in clienti) { 
                 Console.WriteLine($"Nome Cliente {contatore}: {cliente.Name}");
                 contatore++;
+            }
+        }
+
+        public void stampaPrestiti()
+        {
+            Console.WriteLine("//////////// Lista Prestiti banca /////////////");
+            foreach (Prestito prestito in prestiti)
+            {
+                Console.WriteLine($"ID Prestito: {prestito.ID} Intestatario prestito: {prestito.Intestatario}");
             }
         }
 
