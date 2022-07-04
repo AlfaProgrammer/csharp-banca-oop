@@ -26,11 +26,8 @@ namespace csharpBbancaOop
             clienti.Add(cliente);
         }
 
-        public static Cliente CreaCliente()
+        public static Cliente CreaCliente(string nome)
         {
-            Console.WriteLine("Inserisci il nome: ");
-            string nome = Console.ReadLine();
-
             Cliente nuovo = new Cliente(nome);
 
             return nuovo;
@@ -57,7 +54,12 @@ namespace csharpBbancaOop
             Console.WriteLine("//////////// Lista Prestiti banca /////////////");
             foreach (Prestito prestito in prestiti)
             {
-                Console.WriteLine($"ID Prestito: {prestito.ID} Intestatario prestito: {prestito.Intestatario}");
+                Console.WriteLine (
+                    $"ID Prestito: {prestito.ID} " +
+                    $"\tIntestatario prestito: {prestito.Intestatario}" +
+                    $"\tRata: {prestito.Rata}" +
+                    $" \tAmmontare: {prestito.Ammontare}");
+                prestito.InteresseKwokka();
             }
         }
 

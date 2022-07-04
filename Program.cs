@@ -7,17 +7,40 @@ Console.WriteLine("Hello, World!");
 
 Banca banca = new Banca("Intesa San Paolo");
 
+//Creo alcuni clienti di default
+Cliente clienteY = Banca.CreaCliente("Michael");
+Cliente clienteZ = Banca.CreaCliente("Alice");
+Cliente clienteG = Banca.CreaCliente("Marta");
+
 /************************
  * Aggiunta nuovo cliente
  ************************/
-Cliente clienteX = Banca.CreaCliente();
+
+Console.WriteLine("Inserisci il nome: ");
+string nome = Console.ReadLine();
+
+Cliente clienteX = Banca.CreaCliente(nome);
+
 
 banca.nuovoCliente(clienteX);
+banca.nuovoCliente(clienteY);
+banca.nuovoCliente(clienteZ);
+banca.nuovoCliente(clienteG);
 
-banca.stampaClienti();
+// banca.stampaClienti();
 
 Prestito nuovoPrestitoClienteX = clienteX.CreaPrestito();
+Prestito nuovoPrestitoClienteY = clienteY.CreaPrestito();
+Prestito nuovoPrestitoClienteZ = clienteZ.CreaPrestito();
+Prestito nuovoPrestitoClienteG = clienteG.CreaPrestito();
 
 banca.nuovoPrestito(nuovoPrestitoClienteX);
+banca.nuovoPrestito(nuovoPrestitoClienteY);
+banca.nuovoPrestito(nuovoPrestitoClienteZ);
+banca.nuovoPrestito(nuovoPrestitoClienteG);
 
-banca.stampaPrestiti();
+// banca.stampaPrestiti();
+
+Console.WriteLine($"Ammontare Conto CLiente: \t {clienteX.ammontareConto}");
+//Console.WriteLine($"Prelievo: {clienteX.Preleva(50) }");
+clienteX.Deposita(500);
